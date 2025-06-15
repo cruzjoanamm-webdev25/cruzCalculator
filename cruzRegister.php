@@ -34,6 +34,14 @@
             width: 150px;
             background-color: blue;
             color: white;
+            cursor: pointer;
+        }
+        #cruzClear{
+            padding: 10px;
+            width: 150px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -77,10 +85,12 @@
                     <td><input type="text" name="zip" required placeholder="Zip Code"></td>
                     <td><input type="text" name="country" required placeholder="Country"></td>
                 </tr>
-                
+                <tr>
+                    <td><button type="submit" name="regbtn">Register</button></td>
+                    <td><button type="reset" id="cruzClear">Clear</button></td>
+                </tr>
             </table>
             <br>
-            <button type="submit" name="regbtn">Register</button>
         </form>
         <p id="status"></p>
         <p>Already have an account? <a href="cruzLogin.php">Log In</a></p>

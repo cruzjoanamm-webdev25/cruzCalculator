@@ -34,6 +34,14 @@
             width: 150px;
             background-color: blue;
             color: white;
+            cursor: pointer;
+        }
+        #cruzClear{
+            padding: 10px;
+            width: 150px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -48,6 +56,7 @@
                 </tr>
                 <tr>
                     <td><button type="submit" name="loginbtn">Log In</button></td>
+                    <td><button type="reset" id="cruzClear">Clear</button></td>
                 </tr>
             </table>
         </form>

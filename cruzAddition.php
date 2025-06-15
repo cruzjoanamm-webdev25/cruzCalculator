@@ -26,7 +26,9 @@
         button{
             background-color: green;
             color: white;
-            padding: 10px;
+            width: 150px;
+            border-color: green;
+            height: 40px;
             cursor: pointer;
             border-radius: 10px;
         }
@@ -37,6 +39,15 @@
 
         input{
             padding: 10px;
+        }
+
+        #cruzClear{
+            background-color: green;
+            border-color: green;
+            color: white;
+            font-size: 16px;
+            width: 150px;
+            height: 40px;
         }
     </style>
 </head>
@@ -55,15 +66,24 @@
                 <td><label for="num2">Enter second number: </label></td>
                 <td><input type="number" name="num2" required></td>
             </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><button type="submit" name="btn">Add</button></td>
+                <td><button type="reset" id="cruzClear">Clear</button></td>
+            </tr>
         </table>
         <br>
-        <button type="submit" name="btn">Add</button>
     </form>
     <br><br>
     <label for="ans" id="l">num1 + num2 =</label>
     <input type="number" name="ans" id="ans" disabled>
 
     <?php
+        include "cruzConn.php";
+
         if(isset($_POST['btn'])){
             $cruzNum1 = $_POST['num1'];
             $cruzNum2 = $_POST['num2'];
@@ -74,6 +94,9 @@
                 echo "<script>
                     document.getElementById('ans').value = {$cruzSum};
                 </script>";
+
+                $sql = "INSERT INTO cruzAddition (`cruz_FirstNumber`,`cruz_SecondNumber`,`cruz_Sum`) VALUES ('$cruzNum1','$cruzNum2','$cruzSum')";
+                $res = mysqli_query($cruzConn, $sql);
             }
         }
     ?>
